@@ -1,0 +1,48 @@
+Microsoft.EntityFrameworkCore 3.1.3
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
+"Defaultconnection": "Server=NAREN-PC; Database=CoreApiServiceDB4162020; Trusted_Connection=True; MultipleActiveResultSets=True;"
+   
+
+code first command
+----------------------------
+add-migration initial
+update-database
+Remove-Migration
+
+Run command in package manager console
+example
+Add-Migration MigrationsName1
+update-database 
+
+-------------- insert script ------------------------------
+  insert into Categories (Name,IsActive)values('Books',0)
+  insert into Categories (Name,IsActive)values('Notepad',0)
+  insert into Categories (Name,IsActive)values('Jobs Interview ebook',0)
+  insert into Categories (Name,IsActive)values('Comnig Soon',1)
+  go
+insert into Products(Name,Description,UnitPrice,DateOfRegistration,Categoryid)values
+  (
+  'C Sharp',
+  'Software code',
+  200.49,
+  '2020-03-16'
+  ,1
+  )
+  insert into Products(Name,Description,UnitPrice,DateOfRegistration,Categoryid)values
+  (
+  'Asp.net Devolper books',
+  'Software codeing Related',
+  200.49,
+  '2020-04-16'
+  ,1
+  )
+go
+
+
+select * from Categories
+select * from Products
+
+http://localhost:50000/api/GetProducts
